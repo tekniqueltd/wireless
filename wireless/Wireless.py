@@ -344,7 +344,11 @@ class WpasupplicantWireless(WirelessDriver):
 
         # attempt to grab an IP
         # better hope we are connected because the timeout here is really long
-        # cmd('sudo dhclient {}'.format(self._interface))
+        # Remove previous lease
+        cmd('sudo dhclient -r {}'.format(self._interface))
+
+        # Get a new lease
+        cmd('sudo dhclient {}'.format(self._interface))
 
         # parse response
         return True
