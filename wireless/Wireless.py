@@ -324,7 +324,7 @@ class WpasupplicantWireless(WirelessDriver):
         cmd('sudo killall wpa_supplicant')
 
         # don't do DHCP for GoPros; can cause dropouts with the server
-        cmd('sudo ifconfig {} 10.5.5.10/24 up'.format(self._interface))
+        cmd('sudo ifconfig {} up'.format(self._interface))
 
         # create configuration file
         f = open(self._file, 'w')
