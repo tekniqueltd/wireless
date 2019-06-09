@@ -350,6 +350,8 @@ class WpasupplicantWireless(WirelessDriver):
         # Get a new lease
         cmd('sudo dhclient {}'.format(self._interface))
 
+        cmd('sudo route del default {}'.format(self._interface))
+
         # parse response
         return True
 
