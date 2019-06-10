@@ -1,4 +1,5 @@
 from abc import ABCMeta, abstractmethod
+import re
 import subprocess
 from time import sleep
 from packaging import version
